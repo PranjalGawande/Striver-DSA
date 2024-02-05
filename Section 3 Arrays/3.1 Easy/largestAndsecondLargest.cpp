@@ -12,11 +12,18 @@ int main() {
     }
 
     int maxi = INT_MIN;
+    int second_max = INT_MIN;
     for (auto it : arr) {
         if (maxi < it) {
+            second_max = maxi;
             maxi = it;
         }
+        else if (second_max < it && it != maxi) {
+            second_max = it;
+        }
     }
-    cout << maxi;
+
+    cout << maxi << endl;
+    cout << second_max << endl;
     return 0;
 }
